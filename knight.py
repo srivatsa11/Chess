@@ -9,14 +9,15 @@ class Knight(ChessPiece):
         x, y = self.position
         self.validMoves = []
 
-        rowOptions = [-1, -2, -2, -1, +1, +2, +2, +1]
-        colOptions = [-2, -1, +1, +2, +2, +1, -1, -2]
+        row_options = [-1, -2, -2, -1, +1, +2, +2, +1]
+        col_options = [-2, -1, +1, +2, +2, +1, -1, -2]
 
         for i in range(8):
-            r = x + rowOptions[i]
-            c = y + colOptions[i]
-            if (r >= 0 and r <= 7) and (c >= 0 and c <= 7):
+            r = x + row_options[i]
+            c = y + col_options[i]
+            if (r in range(0, 8)) and (c in range(0, 8)):
                 self.validMoves.append((r, c))
+
 
 if __name__ == "__main__":
     cp = Knight()
